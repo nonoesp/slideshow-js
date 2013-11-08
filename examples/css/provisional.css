@@ -2,23 +2,7 @@
 
 /*Provisional CSS*/
 
-.menu {
-	margin-bottom:54px;
-}
 
-.menu--button {
-	cursor:pointer;
-	display:inline-block;
-	margin-right:28px;
-	color:#898989;
-	font-weight:600;
-	letter-spacing:-0.075em;
-}
-
-.menu--button-selected {
-	text-decoration: underline;
-	color:#000;
-}
 
 @media all and (max-width:640px) {
 	.menu--button {
