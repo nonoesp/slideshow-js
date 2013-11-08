@@ -1,0 +1,392 @@
+
+
+/*------------------------------------*\
+  RESET
+\*------------------------------------*/
+
+html,body{ /*Nono*/
+  height:100%;
+  max-height:100%;
+}
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td { 
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+}
+address, caption, cite, dfn, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+caption, th {
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+abbr, acronym {
+  border: 0;
+}
+
+
+/*------------------------------------*\
+  MAIN
+\*------------------------------------*/
+
+html {
+  /*font-family: "Georgia", "Times New Roman", Times, serif;*/
+  font-family:sans-serif;
+  font-size:1.125em; /* 18 / 16 = ems */
+  color: #333;
+  padding: 0 0px;
+  margin: 0 auto;
+}
+
+body {
+  margin:0px;
+  
+  font-size:18px; /* 18 / 16 = 1.125em*/
+  line-height:27px;
+  font-weight:400;
+  color:#333;  
+
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+
+}
+
+/*Test for Grid layout*/
+/*body:hover {
+  background: url(../img/grid-18px.png) center -6px repeat-y #fff;
+}
+img { height:0px;}
+*/
+  
+/* TYPE */
+
+/* headings */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 27px;
+  font-weight: bold;
+  font-family: sans-serif;  
+  letter-spacing: -0.067em;  
+}
+
+/* paragraphs */
+
+p {
+  margin-bottom:27px;
+}
+
+h1 {
+  font-size:2em; /*32px / 18px = 1.777777778em*/
+  line-height:0.75em; /*27px / 32px = 1em*/
+}
+
+h2 {
+  font-size:1.277777778em; /*23px / 18px = 1.388em*/
+  line-height:1.173913043em; /*27px / 25px = 1.08em */
+}
+
+h3 {
+  font-size:1.16666666666667em; /* 21px / 18px = 1.277777778em*/
+  line-height:1.28571428571429em;
+}
+
+h4 {
+  font-size:1.05555555555556em; /* 19px / 18px = */
+  line-height:1.42105263157895em;
+}
+
+h5, h6 {
+  font-size:1em; /* 18px / 18px = 1em; */
+  line-height:1.5em; /* 1.5  / 1    = 1.5em */
+}
+
+/* LISTS */
+
+ul, ol {
+  margin-bottom: 27px;
+}
+
+ul {
+  list-style: inside;
+}
+
+ul ul,
+ol ol {
+  margin: 0 0 0 60px;
+}
+
+/* QUOTES */
+
+blockquote {
+  margin: 0 40px 0 0px;
+  border-left: 5px solid #db4a38;
+  padding-left: 18px;
+}
+ 
+blockquote b {
+  display: block;
+}
+
+/* LINKS */
+
+a {
+  color:#db4a38;
+  text-decoration:none;
+}
+
+a:hover {
+  color:#ad3d2f;
+  text-decoration:underline;
+}
+
+h1 > a {
+  color:#333332;
+  text-decoration:none;
+}
+
+h1 > a:hover {
+  color:#000;
+  text-decoration:underline;
+}
+
+.title {color:#fff;}
+.title:hover {color:#fff;}
+
+
+/* CODE AND PRE */
+
+code,
+pre {
+  font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
+  font-size: 13px;
+  color: #333333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 27px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+code {
+  white-space: nowrap;
+}
+
+pre code {
+  padding: 0 13px 0 13px;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+
+
+
+
+/* RESPONSIVE LATERAL MARGINS */
+
+/*
+@media all and (max-width:500px) {
+  
+  h1, h2, h3, h4, h5, h6, p, pre, ul {
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+  
+  
+  ul > li > p {
+    margin-left:0;
+  }
+  
+  blockquote {
+    padding-left:0px;
+  }
+  
+  
+  .form {
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+
+  p.youtube-thumb { margin-left:0px; }
+  
+}
+*/
+
+
+
+/*------------------------------------*/
+/*			CUSTOM					  */
+/*------------------------------------*/
+
+
+/*TODO: make it so it fits on the grid multiple of 27px height */
+/* input values to crop the image: top, right, bottom, left */
+.youtube-thumb #yt-img { margin:-18% -0px -18% -0px; width:100%; }
+.youtube-thumb #yt-mask{ position:absolute;z-index:1;width:100%; bottom:0;}
+.youtube-thumb	{ overflow:hidden; width:100%; position:relative; margin-bottom: 27px; }
+
+#footer { text-align:center;margin-bottom:27px;height:27px }
+
+/*.input-custom { height:30px; }*/
+
+p img {
+  max-width:100%;
+}
+
+/*
+.item-text p:first-of-type {
+  font-size:1.055555556em;
+  line-height:1.421052631em;  
+}*/
+
+  .content {display:inline-block;
+			text-align:left;
+			position:relative;
+			margin:0px;
+			width:100%;
+			}
+			
+.item,.item-solo {
+			position:relative;
+			display:block;
+			margin-bottom:53px;
+			width:100%;
+			border-bottom:1px solid #f2f2f0;
+			-webkit-transition: -webkit-box-shadow 0.5s ease-out;
+    		-moz-transition: -moz-box-shadow 0.5s ease-out;
+    		transition: box-shadow 0.5s ease-out;
+    		}
+
+.item-solo {padding-bottom:54px;}
+  
+  .item-image {
+  			display:block;
+  			position:relative;
+  			margin-bottom:27px;
+  			width:100%;
+  			}  
+  		
+/*
+  .item-footer {
+  			margin-bottom:23px;
+  			color: #ccc;
+  			text-align:right;
+  			}
+*/
+
+/*EDITOR*/
+
+.preview-wrapper, .editor.content {
+  display:none; 
+  width:100%; 
+  position:relative
+}
+
+input.editor, textarea.editor {
+  box-sizing: border-box; 
+  margin-bottom:9px;
+  padding:5px; 
+}
+
+@media all and (min-width:1000px){  
+  .editor--fullmode__html {
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    transition: margin 0.5s ease-out;
+    margin-left: 30%;
+  }
+
+  .editor-full {
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:30%;
+    background-color:#ffffff;
+    z-index:101
+  }
+
+  .editor-full > * {
+    margin:27px;
+    width:auto;
+    height:100%;
+  }
+}
+  
+/*some of this elements dont exist anymore DEPRECATE SOON*/
+.youtube-thumb, .item-button-edit,.item-toggle-isactive,.item-toggle-ispublic,.editor-button-destroy,.button-add-item { cursor: pointer; }
+
+
+
+
+/*----------------IPAD MINI------------------------*/
+
+
+/*iPad mini in portrait & landscape*/
+
+/*
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 1)  { 
+
+	.item-text p { font-size: 18px; letter-spacing: -0.02em; } 
+			
+	.item-title { font-size: 31px; margin:24px; margin-bottom:35px; margin-top:23px; }
+	.item-image {width:100%;}
+	.content { width:680px; }	
+}
+*/
+/*iPad mini in landscape*/
+/*@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {  }
+*/
+/*iPad mini in portrait*/
+/*
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1)  { }
+*/
+
+
+
+
+

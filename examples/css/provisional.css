@@ -1,0 +1,72 @@
+
+
+/*Provisional CSS*/
+
+.menu {
+	margin-bottom:54px;
+}
+
+.menu--button {
+	cursor:pointer;
+	display:inline-block;
+	margin-right:28px;
+	color:#898989;
+	font-weight:600;
+	letter-spacing:-0.075em;
+}
+
+.menu--button-selected {
+	text-decoration: underline;
+	color:#000;
+}
+
+@media all and (max-width:640px) {
+	.menu--button {
+		display:block;
+	}
+	.cover-subtitle {
+  	  font-size:11px;
+	}
+}
+
+section {
+	display:none;
+}
+
+.section-selected {
+	display:block;
+}
+
+
+.wrapper {
+    background-color: #fff;
+    background-color:transparent;
+    overflow: hidden;    
+ 
+    max-width: 680px;
+
+    margin-left:auto;
+    margin-right:auto;    
+
+    padding:27px 30px 54px 30px;
+}
+
+.cover {
+}
+
+@media all and (max-width:480px) {
+	.cover-title {
+		font-size:15px;
+	}
+	.cover-description {
+		font-size:12px;
+	}	
+}
+
+/*style="background-image: url('img/slides/00.jpg')"*/
+
+.cover-img__a {
+}
+
+
+
