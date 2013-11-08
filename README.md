@@ -3,7 +3,13 @@ NOSlideShow
 
 Simple SlideShow Library In JavaScript.
 
-## Example
+## Live Preview
+
+* [Full](http://nonoesp.github.io/NOSlideShow)
+* [Cover](http://nonoesp.github.io/NOSlideShow/index-cover.html)
+* [Crop](http://nonoesp.github.io/NOSlideShow/index-crop.html)
+
+## JavaScript Code
 
 ```
 var mySlideShow = new SlideShow('projectSlides');
