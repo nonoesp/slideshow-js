@@ -37,4 +37,4 @@ var mySlideShow = new SlideShow('projectSlides');
 
 ## Me
 
-I tweet on [@nonoesp](http://www.twitter.com/nonoesp) and write on [Getting Simple](http://gettingsimple.com) and [nono.ma/says](http://nono.ma/says)
+Hi there, I'm Nono Martínez Alonso. I tweet on [@nonoesp](http://www.twitter.com/nonoesp) and write on [Getting Simple](http://gettingsimple.com) and [nono.ma/says](http://nono.ma/says).
