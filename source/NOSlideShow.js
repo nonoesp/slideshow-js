@@ -1,8 +1,12 @@
 
-/* 
-/  NOSlideShow.js (v0.2)
-/ 
+/*
+/  NOSlideShow.js (v0.2.1)
+/
 /  Nono Martínez Alonso (@nonoesp)
+/
+/ TODO:
+/ [ ] SlideShow holds its own timer, i.e. setInterval
+/ [ ] Slideshow can .play(interval) and .stop()
 */
 
 function SlideShow(token) {
@@ -13,9 +17,11 @@ function SlideShow(token) {
   this.currentPosition = 0;
 
   // Container with image, background for transitions, label
-  this.container = { image: false,
-                     background: false,
-                     label: false };
+  // This holds the properties of the state, i.e. the slide
+  this.container = {};
+
+  // Timer to hold a setInterval instance
+  this.timer = null;
 
   // Override for custom behavior on slideDisplay();
   this.didDisplaySlide = function() { };
@@ -25,12 +31,21 @@ SlideShow.prototype.setSlides = function(slides) {
   this.slides = slides;
 };
 
+/*
+SlideShow.prototype.play = function(interval) {
+  this.timer = setInterval("this.advanceSlide()", interval);
+}
+
+SlideShow.prototype.stop = function() {
+  clearInterval(this.timer);
+}*/
+
 SlideShow.prototype.advanceSlide = function() {
   this.currentPosition++;
   if(this.currentPosition > this.slides.length-1) {
     this.currentPosition = 0;
   }
-  
+
   this.didAdvanceSlide();
 };
 
@@ -42,7 +57,7 @@ SlideShow.prototype.nextIndex = function() {
   return nextIndex;
 }
 
-SlideShow.prototype.currentSlide = function() { 
+SlideShow.prototype.currentSlide = function() {
   return this.slides[this.currentPosition];
 }
 
@@ -52,7 +67,7 @@ SlideShow.prototype.nextSlide = function() {
 
 SlideShow.prototype.didAdvanceSlide = function() {
   this.displaySlide();
-}; 
+};
 
 SlideShow.prototype.displaySlide = function() {
 
@@ -64,13 +79,13 @@ SlideShow.prototype.displaySlide = function() {
     container.background.css('background-image', "url('img/slides/" + currentSlide.image + "')");
 
     // Set current slide stuff
-    
-    container.label.html(currentSlide.name);      
+
+    container.label.html(currentSlide.name);
     container.image.animate({opacity: '0.0'}, 500, function (){
       $(this).css('opacity', '1.0');
       container.image.css('background-image', "url('img/slides/" + currentSlide.image + "')");
-    });    
-    
+    });
+
     setTimeout('$(".cover-img.cover-img__b").css("background-image", "url(\'img/slides/' + nextSlide.image + '\')")', 1000);
 
     this.didDisplaySlide();
