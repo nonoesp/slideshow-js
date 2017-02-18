@@ -1,20 +1,17 @@
 
 /*
-/  NOSlideShow.js (v0.2.1)
+/  NOslideshow.js (v0.3)
 /
-/  Nono Martínez Alonso (@nonoesp)
-/
-/ TODO:
-/ [ ] SlideShow holds its own timer, i.e. setInterval
-/ [ ] Slideshow can .play(interval) and .stop()
+/  Nono Martínez Alonso, www.nono.ma
 */
 
-function SlideShow(token) {
+var slideshow = function (token) {
 
   // Unique token to differentiate SlideShows
   this.token = token;
   this.slides = [];
   this.currentPosition = 0;
+  this.index = 0;
 
   // Container with image, background for transitions, label
   // This holds the properties of the state, i.e. the slide
@@ -24,23 +21,23 @@ function SlideShow(token) {
   this.timer = null;
 
   // Override for custom behavior on slideDisplay();
-  this.didDisplaySlide = function() { };
+  this.didDisplaySlide = function() { this.index++; };
 }
 
-SlideShow.prototype.setSlides = function(slides) {
+slideshow.prototype.setSlides = function(slides) {
   this.slides = slides;
 };
 
 /*
-SlideShow.prototype.play = function(interval) {
+slideshow.prototype.play = function(interval) {
   this.timer = setInterval("this.advanceSlide()", interval);
 }
 
-SlideShow.prototype.stop = function() {
+slideshow.prototype.stop = function() {
   clearInterval(this.timer);
 }*/
 
-SlideShow.prototype.advanceSlide = function() {
+slideshow.prototype.advanceSlide = function() {
   this.currentPosition++;
   if(this.currentPosition > this.slides.length-1) {
     this.currentPosition = 0;
@@ -49,7 +46,7 @@ SlideShow.prototype.advanceSlide = function() {
   this.didAdvanceSlide();
 };
 
-SlideShow.prototype.nextIndex = function() {
+slideshow.prototype.nextIndex = function() {
   var nextIndex = this.currentPosition + 1;
   if (nextIndex > this.slides.length-1) {
     nextIndex = 0;
@@ -57,19 +54,19 @@ SlideShow.prototype.nextIndex = function() {
   return nextIndex;
 }
 
-SlideShow.prototype.currentSlide = function() {
+slideshow.prototype.currentSlide = function() {
   return this.slides[this.currentPosition];
 }
 
-SlideShow.prototype.nextSlide = function() {
+slideshow.prototype.nextSlide = function() {
   return this.slides[this.nextIndex()];
 }
 
-SlideShow.prototype.didAdvanceSlide = function() {
+slideshow.prototype.didAdvanceSlide = function() {
   this.displaySlide();
 };
 
-SlideShow.prototype.displaySlide = function() {
+slideshow.prototype.displaySlide = function() {
 
     var currentSlide = this.currentSlide();
     var nextSlide = this.nextSlide();
@@ -90,3 +87,10 @@ SlideShow.prototype.displaySlide = function() {
 
     this.didDisplaySlide();
 };
+
+slideshow.prototype.randomSlide = function() {
+  var slide_index = Math.floor(Math.random() * this.slides.length);
+  return this.slides[slide_index];
+}
+
+module.exports = slideshow;

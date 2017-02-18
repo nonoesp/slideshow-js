@@ -1,0 +1,28 @@
+{
+  "name": "slideshow-js",
+  "version": "0.3.0",
+  "description": "Simple slideshows.",
+  "main": "slideshow.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonoesp/NOSlideShow.git"
+  },
+  "keywords": [
+    "javascript",
+    "slideshow",
+    "slides",
+    "presentation"
+  ],
+  "author": "Nono Martínez Alonso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nonoesp/NOSlideShow/issues"
+  },
+  "homepage": "https://github.com/nonoesp/NOSlideShow#readme"
+}
